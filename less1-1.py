@@ -1,16 +1,13 @@
-import pymystem3
-from  pymystem3 import Mystem
-file = open('texts.txt','r', encoding='utf-8')
+import pymorphy2
+
+file = open('texts2.txt', 'r', encoding='utf-8')
 ttt = file.read()
-
-m = Mystem()
-lem = m.lemmatize(ttt)
-
-
-print('Старт')
+m = pymorphy2.MorphAnalyzer()
+# lem = m.lemmatize(ttt)
+tt = ttt.split(' ')
+for i in tt:
+    rr = m.parse(i)[0].normal_form
+    print(rr)
 rr='Самый крутой тест'
-
 print(ttt)
-print( lem[15:280])
-
-print(' tktjhfnlfnkfj jf kljfhlf l')
+# print( lem[15:280])
