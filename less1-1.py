@@ -1,15 +1,16 @@
 import pymystem3
 from  pymystem3 import Mystem
+file = open('texts.txt','r', encoding='utf-8')
+ttt = file.read()
 
-tt = 'Простая проверочка лемматизации русского текста на вскидку'
 m = Mystem()
-lem = m.lemmatize(tt)
+lem = m.lemmatize(ttt)
 
 
 print('Старт')
 rr='Самый крутой тест'
 
-print(rr)
-print( lem)
+print(ttt)
+print( lem[15:280])
 
 
